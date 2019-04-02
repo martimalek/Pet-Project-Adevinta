@@ -1,0 +1,40 @@
+return (
+    <div>
+        <div>
+            <StarRange color="mercury" size="neutron" />
+            <StarRange color="venus" size="neutron" />
+            <StarRange color="earth" size="neutron" />
+            <StarRange color="mars" size="neutron" />
+            <StarRange color="jupiter" size="neutron" />
+            <StarRange color="saturn" size="neutron" />
+            <StarRange color="uranus" size="neutron" />
+        </div>
+        <div>
+            <StarRange color="mercury" size="dwarf" />
+            <StarRange color="venus" size="dwarf" />
+            <StarRange color="earth" size="dwarf" />
+            <StarRange color="mars" size="dwarf" />
+            <StarRange color="jupiter" size="dwarf" />
+            <StarRange color="saturn" size="dwarf" />
+            <StarRange color="uranus" size="dwarf" />
+        </div>
+        <div>
+            <StarRange color="mercury" size="giant" />
+            <StarRange color="venus" size="giant" />
+            <StarRange color="earth" size="giant" />
+            <StarRange color="mars" size="giant" />
+            <StarRange color="jupiter" size="giant" />
+            <StarRange color="saturn" size="giant" />
+            <StarRange color="uranus" size="giant" />
+        </div> 
+        <div>
+            <StarRange color="mercury" size="super-giant" />
+            <StarRange color="venus" size="super-giant" />
+            <StarRange color="earth" size="super-giant" />
+            <StarRange color="mars" size="super-giant" />
+            <StarRange color="jupiter" size="super-giant" />
+            <StarRange color="saturn" size="super-giant" />
+            <StarRange color="uranus" size="super-giant" />
+        </div> 
+    </div>
+)

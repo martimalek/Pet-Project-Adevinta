@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, #fff, #ffbdff);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.image-container {
+    width: auto;
+    height: auto;
+}
+
+@mixin flexed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin search {
+    @include flexed;
+    background: linear-gradient(#fff, #fdf);
+    margin: 0;
+    z-index: 1;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0 1rem gray;
+    justify-content: space-evenly;
+
+    &-icon {
+        position: relative;
+        // left: 4vh;
+        cursor: pointer;
+    }
+}
+
+$sz-atom-button: 4vh;
+$fz-atom-button: 1.3vh;
+$sui-atom-input-height: 4vh;
+$sui-atom-input-fs: 1.3vh;
+$fz-atom-badge-l: 1.3vh;
+$fz-s: 1.5vh;
+$c-success: #09f !default;
+$c-gray: #36B538 !default;
+$bgc-atom-tag: #d4d4d4 !default;
+
+.search {
+    @include flexed;
+    height: 8vh;
+    width: 24vh;
+
+    &-form {
+        @include flexed;
+        width: 100%;
+        height: 100%;
+
+        &-input {
+            width: 100%;
+
+            .sui-AtomInput-input {
+                min-height: $sui-atom-input-height;
+                font-size: $sui-atom-input-fs;
+            }
+        }
+
+        &-button {
+            text-align: center;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+
+    &-search {
+        @include search;
+        justify-content: space-evenly;
+
+        .dropped {
+            display: flex;
+            flex-direction: column;
+            right: 4vh;
+            // position: absolute;
+            text-align: center;
+
+            p {
+                font-size: 1.4vh;
+                padding: 0;
+            }
+        }
+
+        &-rangeValue {
+            display: flex;
+            flex-direction: row-reverse;
+            right: 5vh;
+
+            p {
+                padding-right: 2vh;
+                font-size: 3.4vh;
+                align-self: center;
+            }
+        }
+    }
+
+    &-dropdown {
+        justify-self: center;
+        align-self: center;
+        position: absolute;
+        top: 12vh;
+        width: 100%;
+    }
+
+    &-results {
+        @include flexed;
+        flex-wrap: wrap;
+        margin-top: 12vh;
+        max-width: 40vh;
+
+        &-notFound {
+            margin-top: 20%;
+            padding: 1.5vh;
+            border: 3px dotted #d198d1;
+        }
+    }
+
+    &-movie {
+        margin: 1rem;
+        width: 40vh;
+
+        &-card {
+            border: 1px solid black;
+            border-radius: 1rem;
+            max-width: inherit;
+
+            &:hover {
+                box-shadow: 0rem 0rem 1rem .5rem grey;
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+
+                &-title {
+                    text-decoration: none;
+                    text-align: center;
+                    color: black;
+                    font-size: 1.7vh;
+                }
+
+                &-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    padding-top: .5rem;
+
+                    &-text {
+                        text-decoration: none;
+                        text-align: center;
+                        font-size: 1.4vh;
+                        font-weight: bold;
+                        color: #000;
+                    }
+                }
+            }
+
+            &-img {
+                border-radius: 1rem 1rem 0rem 0rem;
+                width: inherit;
+            }
+        }
+    }
+}
+
+.detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-search {
+        @include search;
+    }
+
+    &-title {
+        margin-top: 12vh;
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
+    }
+
+    &-media {
+        width: 70%;
+        height: auto;
+
+        &-img {
+            width: 100%;
+        }
+
+        &-badge {
+            position: absolute;
+            top: 68%;
+
+            .sui-AtomTag {
+                font-size: $fz-s;
+            }
+        }
+    }
+
+    &-genres {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5vh;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+
+        &-actors {
+            margin-top: 1rem;
+            font-size: 1.5em;
+
+            &-strong {
+                font-size: 1.3em;
+                margin-right: 0.3em;
+            }
+        }
+
+        &-plot {
+            margin-top: 1rem;
+            font-size: 1.7em;
+        }
+
+        &-button {
+            padding: 1vh;
+        }
+
+        a {
+            align-self: flex-end;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+    }
+}
+
+.dropdown {
+    background-color: transparent;
+    width: 90%;
+    margin-left: 5%;
+    position: fixed;
+    animation-name: dropping;
+    animation-duration: 1s;
+}
+
+/* Desktop, Tablet */
+
+@media (min-width: 682px) {
+  
+    $sui-atom-input-fs: 1.7vh;
+    $sui-atom-input-height: 80%;
+    $sz-atom-button: 10vh;
+    $fz-atom-button: 1.8vh;
+
+    .home {
+
+        &-search {
+            .dropped {
+                p {
+                    font-size: 2vh;
+                }
+            }
+        }
+
+        &-results {
+            @include flexed;
+            justify-content: center;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            margin-top: 12vh;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    .search {
+        @include flexed;
+        height: 6.5vh;
+        width: auto;
+        
+        &-form {
+            @include flexed;
+            width: 100%;
+            height: 100%;
+    
+            &-input {
+                width: 100%;
+    
+                .sui-AtomInput-input {
+                    height: $sui-atom-input-height;
+                    font-size: $sui-atom-input-fs;
+                }
+            }
+    
+            &-button {
+                text-align: center;
+                .sui-AtomButton {
+                    height: 80%;
+                }
+            }
+        }
+    }
+  
+}
+
+@keyframes dropping {
+    from {
+        transform: translateY(-10vh)
+    }
+    to {}
+}
+
+@import '../../2-frontend-mv--uilib-components/martiStudio/components/star/range/src/index.scss';
+@import '~@s-ui/react-atom-input/lib/index';
+@import '~@s-ui/react-atom-card/lib/index';
+@import '~@s-ui/react-atom-image/lib/index';
+@import '~@s-ui/react-atom-spinner/lib/index';
+@import '~@schibstedspain/sui-atom-button/lib/index';
+@import '~@schibstedspain/sui-atom-badge/lib/index';
+@import '~@schibstedspain/sui-atom-tag/lib/index';
