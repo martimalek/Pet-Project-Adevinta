@@ -23,33 +23,37 @@ const DetailPage = ({movie, router}) => {
         />
         <Search searchSubmit={query => newSubmit(query)} />
       </div>
-      <h2 className="detail-title">{movie.Title}</h2>
-      <div className="detail-media">
-        <img className="detail-media-img" src={movie.Poster} />
-        <div className="detail-media-badge">
-          <Badge
-            size="large"
-            type="success"
-            label={movie.imdbRating ? movie.imdbRating : 'movie'}
-          />
+      <div className="detail-info">
+        <h2 className="detail-info-title">{movie.Title}</h2>
+        <div className="detail-info-media">
+          <img className="detail-info-media-img" src={movie.Poster} />
+          <div className="detail-info-media-badge">
+            <Badge
+              size="large"
+              type="success"
+              label={movie.imdbRating ? movie.imdbRating : 'movie'}
+            />
+          </div>
+          <div className="detail-info-genres">
+            {movie.Genre.split(',').map((tag, index) => (
+              <AtomTag key={index} label={tag} />
+            ))}
+          </div>
         </div>
-        <div className="detail-genres">
-          {movie.Genre.split(',').map((tag, index) => (
-            <AtomTag key={index} label={tag} />
-          ))}
+        <div className="detail-info-content">
+          <h4 className="detail-info-content-actors">
+            <strong className="detail-info-content-actors-strong">
+              Actors:
+            </strong>
+            {movie.Actors}
+          </h4>
+          <p className="detail-info-content-plot">{movie.Plot}</p>
+          <Link to="/">
+            <Button type="secondary" size="large">
+              Go Home
+            </Button>
+          </Link>
         </div>
-      </div>
-      <div className="detail-content">
-        <h4 className="detail-content-actors">
-          <strong className="detail-content-actors-strong">Actors:</strong>
-          {movie.Actors}
-        </h4>
-        <p className="detail-content-plot">{movie.Plot}</p>
-        <Link to="/">
-          <Button type="secondary" size="large">
-            Go Home
-          </Button>
-        </Link>
       </div>
     </div>
   )
