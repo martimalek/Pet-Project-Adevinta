@@ -4,6 +4,8 @@
 
 This project is a search engine for movies made with the frontend architecture of *Adevinta* (**react, ddd, es6, webpack, sui...**). It has been made with the objective of learning a new frontend architecture and also to use it as a technical interview while approaching the scenario of a real life *Adevinta* project. 
 
+[LIVE DEMO](http://petprojectadevintammd.surge.sh)
+
 ### About the project
 
 The project uses the [OMDb API](http://www.omdbapi.com), which gives you a list of movies and their detailed information.
