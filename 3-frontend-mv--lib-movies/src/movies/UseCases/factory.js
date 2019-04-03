@@ -1,6 +1,7 @@
+import MoviesRepositories from '../Repositories/factory'
+
 import DetailMoviesUseCase from './DetailMoviesUseCase'
 import SearchMoviesUseCase from './SearchMoviesUseCase'
-import MoviesRepositories from '../Repositories/factory'
 
 export default class MoviesUseCaseFactory {
   static detailMoviesUseCase = ({config}) =>
