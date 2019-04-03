@@ -83,5 +83,5 @@ While doing this project I've come across multiple compatibility issues between 
 
     This command is used in *sui-studio* to make the release of your studio, I don't know why it doesn't work but it may have something to do with the patch for the creation of components.
 
-> Note: Because of the above issues the components that you create with sui-studio cannot be uploaded to npm. To use them in your project you have to import them locally (using their relative path, like a regular react component import). Also be aware that I am a *newbie* when it comes to developing and this are all temporary solutions which should be used only if you are in real need of *sui-tools*, I'm absolutely positive that there are ways to completely fix the above issues but I haven't found them yet.
+> Note: Because of the above issues the components that you create with *sui-studio* cannot be uploaded to npm. To use them in your project you have to import them locally (using their relative path, like a regular react component import). Also be aware that I am a *newbie* when it comes to developing and this are all temporary solutions which should be used only if you are in real need of *sui-tools*, I'm absolutely positive that there are ways to completely fix the above issues but I haven't found them yet.
 
