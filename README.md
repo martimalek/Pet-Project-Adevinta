@@ -75,13 +75,12 @@ While doing this project I've come across multiple compatibility issues between 
     > npm run co
     ```
 
-    This basically helps you commit your work with the syntax of sui so that the changelog of your sui-studio is dynamically created. When you try this in *Windows OS* it just won't work, it doesn't throw any error, just does nothing. What you can do is commit normally `git commit -m "<message>"` to be able to save your progress.
+    This basically helps you commit your work with the syntax of sui, it is specially useful in your sui-studio because it's changelog will be dynamically created. When you try this in *Windows OS* it may or may not work, I don't quite see the pattern yet. When not working it doesn't throw any error, just does nothing. In this case you'll have to commit normally `git commit -m "<message>"` to be able to save your progress, I personally recommend using the syntax and nomenclature of sui because it will have the same effect as running the script and it's semantically great, the issue is that you'll have to manually type it. On the other hand when it "works" it basically makes the commit successfully but it stays loading forever, you'll have to manually quit the process with `Ctrl + C`.
 
     ```sh
     > npm run release
     ```
 
-    This command is used to make the release of your work, I suppose that this doesn't work because the commit is not successful.
+    This command is used in *sui-studio* to make the release of your studio, I don't know why it doesn't work but it may have something to do with the patch for the creation of components.
 
-> Note: Because of the above issues the components that you create with sui-studio cannot be uploaded to npm. To use them in your project you have to import them locally (using their relative path).
-
+> Note: Because of the above issues the components that you create with *sui-studio* cannot be uploaded to npm. To use them in your project you have to import them locally (using their relative path, like a regular react component import). Also be aware that I am a *newbie* when it comes to developing and this are all temporary solutions which should be used only if you are in real need of *sui-tools*, I'm absolutely positive that there are ways to completely fix the above issues but I haven't found them yet.
