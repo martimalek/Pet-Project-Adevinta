@@ -10,15 +10,17 @@ export default class ApiMoviesRepository extends MoviesRepository {
   }
 
   getDetail({id}) {
-    return this._fetch(
-      `${this._config.API_ENDPOINT}${this._config.API_KEY}&i=${id}`
-    ).then(res => res.json())
+    const host = this._config.get('API_ENDPOINT')
+    const apikey = this._config.get('API_KEY')
+
+    return this._fetch(`${host}${apikey}&i=${id}`).then(res => res.json())
   }
 
   getResults({query, year}) {
-    return this._fetch(
-      `${this._config.API_ENDPOINT}${this._config.API_KEY}&s=${query}`
-    )
+    const host = this._config.get('API_ENDPOINT')
+    const apikey = this._config.get('API_KEY')
+
+    return this._fetch(`${host}${apikey}&s=${query}`)
       .then(res => res.json())
       .then(response => this._searchMapper.setYear(year).map(response))
   }
