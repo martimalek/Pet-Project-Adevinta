@@ -54,6 +54,8 @@ body {
     }
 }
 
+/* Overwrite styles */
+
 $sz-atom-button: 4vh;
 $fz-atom-button: 1.3vh;
 $sui-atom-input-height: 4vh;
@@ -63,6 +65,12 @@ $fz-s: 1.5vh;
 $c-success: #09f !default;
 $c-gray: #36B538 !default;
 $bgc-atom-tag: #d4d4d4 !default;
+
+.sui-AtomTag-medium {
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(255, 255, 255, 0.3), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+/* General */
 
 .search {
     @include flexed;
@@ -244,17 +252,18 @@ a {
             }
         }
         
-        &-genres {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5vh;
-        }
         
         &-content {
             display: flex;
             flex-direction: column;
             width: 70%;
             
+            &-genres {
+                display: flex;
+                justify-content: center;
+                margin-top: 2.5vh;
+            }
+
             &-actors {
                 margin-top: 1rem;
                 font-size: 1.5em;
@@ -325,10 +334,6 @@ a {
     .detail {
         flex-direction: row;
         align-items: flex-start;
-        
-        &-search {
-            // align-self: flex-start;
-        }
 
         &-info {
             margin-top: 10vh;
@@ -336,11 +341,18 @@ a {
             align-items: flex-start;
 
             &-media {
+                display: flex;
+                justify-content: flex-end;
                 width: 50%;
-                margin: 5vh;
-                margin-top: 7vh;
+                margin: 7vh 6vh 0 5vh;
+
+                &-img {
+                    height: 80%;
+                    width: auto;
+                }
+
                 &-badge {
-                    top: 125%;
+                    top: 30%;
                 }
             }
 
@@ -349,15 +361,37 @@ a {
                 width: 40%;
                 text-align: center;
                 margin: 4vh 10% 0 0;
+                padding: 1.2vh;
                 right: 1vh;
+                font-size: 2em;
             }
 
             &-content {
                 margin-top: 15vh;
+                margin-right: 10vh;
+                text-align: center;
+
+                
+                &-actors {
+                    text-align: center;                    
+                    margin-top: 5vh;
+                    font-size: 1.1em;
+                }
+
+                &-genres {
+                    text-align: center;                    
+                    margin-top: 3vh;
+                }
+
+                &-plot {
+                    text-align: center;                    
+                    font-size: 1em;
+                }
             }
 
             a {
                 margin: 5vh;
+                margin-right: 10vh;
             }
         }
         

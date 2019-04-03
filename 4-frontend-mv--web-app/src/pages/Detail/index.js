@@ -34,11 +34,6 @@ const DetailPage = ({movie, router}) => {
               label={movie.imdbRating ? movie.imdbRating : 'movie'}
             />
           </div>
-          <div className="detail-info-genres">
-            {movie.Genre.split(',').map((tag, index) => (
-              <AtomTag key={index} label={tag} />
-            ))}
-          </div>
         </div>
         <div className="detail-info-content">
           <h4 className="detail-info-content-actors">
@@ -48,6 +43,11 @@ const DetailPage = ({movie, router}) => {
             {movie.Actors}
           </h4>
           <p className="detail-info-content-plot">{movie.Plot}</p>
+          <div className="detail-info-content-genres">
+            {movie.Genre.split(',').map((tag, index) => (
+              <AtomTag key={index} label={tag} />
+            ))}
+          </div>
           <Link to="/">
             <Button type="secondary" size="large">
               Go Home
